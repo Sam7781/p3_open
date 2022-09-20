@@ -65,26 +65,47 @@ header {
   box-shadow: 10px 10px 16px -3px #000000;
 }
 
+.fonction {
+  counter-reset: etapes;
+}
 .fonction ol {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  gap: 30px;
 }
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
   .fonction ol {
     flex-direction: column;
   }
 }
 .fonction li {
+  position: relative;
   background-color: #f6f6f6;
-  padding: 15px 30px;
-  border: 1px solid red;
+  padding: 20px 30px;
   flex-grow: 1;
   border-radius: 15px;
+  list-style: none;
   box-shadow: 2px 1px 8px -3px #000000;
+}
+.fonction li::before {
+  content: counter(etapes);
+  counter-increment: etapes;
+  color: white;
+  background-color: #9356DC;
+  padding: 6px 10px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 15px;
+  left: -15px;
 }
 .fonction li:hover {
   transform: scale(1.03);
+}
+.fonction li i.fas {
+  margin-right: 15px;
+  color: #7e7e7e;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */

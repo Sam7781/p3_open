@@ -1,0 +1,97 @@
+.menus {
+  background-color: #edecec;
+  padding-bottom: 90px;
+}
+.menus h2 {
+  font-weight: 700;
+  font-size: 30px;
+  padding-top: 55px;
+  padding-bottom: 25px;
+  margin-left: 15px;
+}
+.menus .menus_card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+@media (max-width: 1000px) {
+  .menus .menus_card {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 15px;
+  }
+}
+.menus .menus_card .carte {
+  position: relative;
+  margin-bottom: -30px;
+}
+.menus .menus_card .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 25px;
+  width: 80px;
+  color: #1b6150;
+  background-color: #99E2D0;
+  text-align: center;
+  padding-top: 5px;
+  right: 18px;
+  top: 15px;
+  font-size: 14px;
+}
+.menus .card {
+  padding-bottom: 0;
+}
+.menus .card_img {
+  height: 200px;
+  background-position: center bottom;
+  background-size: cover;
+  border-radius: 15px 15px 0 0;
+}
+.menus .card_img-2 {
+  background-position: center 60%;
+}
+.menus .card_img-1 {
+  background-image: url("../.././images/restaurants/menu_1.jpg");
+}
+.menus .card_img-2 {
+  background-image: url("../.././images/restaurants/menu_2.jpg");
+}
+.menus .card_img-3 {
+  background-image: url("../.././images/restaurants/menu_3.jpg");
+}
+.menus .card_img-4 {
+  background-image: url("../.././images/restaurants/menu_4.jpg");
+}
+.menus .card_info {
+  height: 28%;
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 15px 15px;
+}
+.menus .card_info h3 {
+  padding-top: 15px;
+  padding-bottom: 2px;
+  margin-left: 15px;
+  font-size: 19px;
+  font-weight: 700;
+}
+.menus .card_info p {
+  padding-bottom: 50px;
+  margin-left: 15px;
+  font-size: 18px;
+  font-weight: 100;
+}
+.menus .card_info i {
+  font-size: 25px;
+  position: absolute;
+  right: 30px;
+  top: 25%;
+}
+.menus .card_info:hover .far::before {
+  content: "\f004";
+  font-weight: bold;
+  color: rgb(147, 86, 220);
+  display: block;
+  background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}/*# sourceMappingURL=menus.css.map */

@@ -1,0 +1,128 @@
+@-webkit-keyframes iconanim {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes iconanim {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+#image-resto img {
+  display: block;
+  width: 100%;
+  height: 40vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: -20px;
+}
+
+.nom-resto {
+  display: flex;
+  padding: 10px 35px 10px 20px;
+  align-items: center;
+  background: #edecec;
+  border-radius: 45px 45px 0 0;
+  margin-top: -45px;
+  width: 100%;
+  position: relative;
+  font-size: 30px;
+}
+.nom-resto h2 {
+  font-family: "shrikhand", "sans-serif";
+  font-size: 30px;
+  position: relative;
+  width: 100%;
+}
+.nom-resto h2 i {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+}
+.nom-resto:hover .far::before {
+  content: "\f004";
+  font-weight: bold;
+  color: rgb(147, 86, 220);
+  background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.resto_lapalette {
+  padding: 0 15px;
+  background: #edecec;
+}
+
+.menu_la_palette {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.menu_la_palette h3 {
+  margin: 8px;
+}
+@media (max-width: 1000px) {
+  .menu_la_palette {
+    grid-template-columns: 1fr;
+  }
+}
+.menu_la_palette .entrees, .menu_la_palette .plats, .menu_la_palette .desserts {
+  overflow: hidden;
+}
+.menu_la_palette .entrees .entrees_details, .menu_la_palette .plats .entrees_details, .menu_la_palette .desserts .entrees_details {
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 2px 2px 8px 1px #f9f9f9;
+  margin: 5px;
+}
+.menu_la_palette .entrees .entrees_details .prix, .menu_la_palette .plats .entrees_details .prix, .menu_la_palette .desserts .entrees_details .prix {
+  margin-left: auto;
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px;
+}
+.menu_la_palette .entrees .entrees_details .description_entrees, .menu_la_palette .plats .entrees_details .description_entrees, .menu_la_palette .desserts .entrees_details .description_entrees {
+  padding: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu_la_palette .entrees .entrees_details .description_entrees h4, .menu_la_palette .entrees .entrees_details .description_entrees span, .menu_la_palette .plats .entrees_details .description_entrees h4, .menu_la_palette .plats .entrees_details .description_entrees span, .menu_la_palette .desserts .entrees_details .description_entrees h4, .menu_la_palette .desserts .entrees_details .description_entrees span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu_la_palette .entrees .entrees_details .cheked, .menu_la_palette .plats .entrees_details .cheked, .menu_la_palette .desserts .entrees_details .cheked {
+  display: grid;
+  place-items: center;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  margin-right: -50px;
+  width: 50px;
+  transition: margin-right 0.2s;
+}
+.menu_la_palette .entrees .entrees_details .cheked i, .menu_la_palette .plats .entrees_details .cheked i, .menu_la_palette .desserts .entrees_details .cheked i {
+  display: grid;
+  place-items: center;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  color: #99E2D0;
+}
+.menu_la_palette .entrees .entrees_details:hover .cheked, .menu_la_palette .plats .entrees_details:hover .cheked, .menu_la_palette .desserts .entrees_details:hover .cheked {
+  margin-right: 0;
+}
+.menu_la_palette .entrees .entrees_details:hover i, .menu_la_palette .plats .entrees_details:hover i, .menu_la_palette .desserts .entrees_details:hover i {
+  -webkit-animation: iconanim 0.5s ease-in-out;
+          animation: iconanim 0.5s ease-in-out;
+}/*# sourceMappingURL=restaurant.css.map */

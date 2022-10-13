@@ -1,0 +1,132 @@
+@import "../utils/variables.scss";
+@import "../utils/colors.scss";
+
+@keyframes iconanim{
+    0%{
+      transform: rotate(-270deg);  
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+#image-resto img{
+    display: block;
+    width:100%;
+    height: 40vh;
+    object-fit:cover;
+    margin-bottom: -20px;
+}
+
+
+.nom-resto{
+    display: flex;
+    padding: 10px 35px 10px 20px;
+    align-items: center;
+    background:$light-grey;
+    border-radius:45px 45px 0 0 ;
+    margin-top:-45px;
+    width:100%;
+    // height:100px;
+    position: relative;
+    & h2{
+        font-family: "shrikhand",'sans-serif';
+        font-size: 30px;
+        position: relative; 
+        width:100%;
+        i {
+            
+            position: absolute;
+            right:30px;
+            top:50%;
+         }
+        }
+        font-size: 30px;
+            &:hover .far::before{
+                content: "\f004";
+                font-weight: bold;
+                color: rgba(147, 86, 220, 1);
+                // display: block;
+                background: -webkit-linear-gradient(rgba(147, 86, 220, 1),rgba(255, 121, 218, 1));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                
+        } 
+    
+    }
+  .resto_lapalette{
+    padding:0 15px;
+    background:$light-grey;
+ }     
+ .menu_la_palette{ 
+    
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+    h3{
+        margin:8px;
+    }
+     @media (max-width: 1000px){
+        grid-template-columns: 1fr;
+    }    
+        .entrees,.plats ,.desserts{
+
+             overflow: hidden;
+            .entrees_details{
+               display: flex;
+               border-radius: 15px; 
+                overflow: hidden;
+               background-color: white;
+                box-shadow: 2px 2px 8px 1px #f9f9f9;
+                margin: 5px;
+                .prix{
+                    margin-left: auto;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: flex-end;
+                    padding: 15px;
+                }
+                .description_entrees{
+                    padding: 15px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    h4, span{
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .cheked{
+                    display: grid;
+                    place-items: center;
+                    background-color: $tertiary-color;
+                    border-radius: 0 15px 15px 0;
+                    margin-right:-50px;
+                    width:50px;
+                    transition: margin-right 0.2s;
+                    i{
+                      display: grid;
+                      place-items: center;
+                      background-color: white;
+                      width:25px;
+                      height: 25px;  
+                      border-radius: 15px;
+                      color:$tertiary-color;
+                    }
+                }
+                &:hover{
+
+                 .cheked{
+                    margin-right: 0;
+                    }
+                  i{
+                    
+                    animation: iconanim 0.5s ease-in-out;
+                    }
+               }
+            }
+        }
+       
+}
+ 

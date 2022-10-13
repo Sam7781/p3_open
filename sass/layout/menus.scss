@@ -1,0 +1,113 @@
+@import "../utils/variables.scss";
+@import "../utils/colors.scss";
+.menus{
+    background-color: $light-grey;
+
+    padding-bottom: 90px;
+    h2{
+        font-weight: 700;
+        font-size: 30px;
+        padding-top: 55px;
+        padding-bottom: 25px;
+        margin-left:15px;
+    }
+    & .menus_card{
+        
+        display: grid;
+        grid-template-columns:repeat(2,1fr) ;
+        gap:30px;
+        @media(max-width:$breakpoint){
+            grid-template-columns: repeat(1,1fr);
+            padding:0 15px;
+        }
+
+            & .carte{
+                position: relative;
+                margin-bottom: -30px;
+            }
+             .new::before{
+            content:"Nouveau";
+            position:absolute;
+            height:25px;
+            width:80px;
+            color:darken($tertiary-color,50%);
+            background-color:$tertiary-color;
+            text-align: center;
+            padding-top:5px;
+            right:18px;
+            top:15px;
+            font-size: 14px;
+        }
+    
+    } 
+    
+    .card{
+        padding-bottom:0;
+      
+         &_img{
+             height: 200px;
+             background-position: center bottom;
+            background-size:cover;
+            border-radius: 15px 15px 0 0;  
+            
+        } 
+        &_img-2{
+        background-position: center 60%;
+           
+            
+        }       
+        @for $i from 1 through 4{
+            &_img-#{$i}{
+                background-image:url("../.././images/restaurants/menu_#{$i}.jpg") ;
+            }
+        }
+        &_info{
+            height:28%;
+            position: relative;
+            background-color: white;
+            border-radius: 0 0 15px 15px;
+            h3{
+                padding-top: 15px;
+                padding-bottom: 2px;
+                margin-left: 15px;
+                font-size:19px;
+
+                font-weight: 700;
+            }
+            p{
+                // padding-top: 5px;
+                padding-bottom: 50px;
+                margin-left:15px ;
+                font-size:18px;
+                font-weight:100;
+             
+            }
+            i{
+                font-size: 25px;
+                position: absolute;
+                right:30px;
+                top:25%;
+            }
+      
+            &:hover .far::before{
+                content: "\f004";
+                font-weight: bold;
+                // transform: scale(1.02);
+                // color:$secondary-color;
+                //  font-size: 30px;
+                color: rgba(147, 86, 220, 1);
+                display: block;
+                background: -webkit-linear-gradient(rgba(147, 86, 220, 1),rgba(255, 121, 218, 1));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                
+            }
+            // .far:hover{
+            //     transition:transform 1s;
+            //     // transform: scale(0.01);
+            // }
+        }
+        }
+  
+    }
+

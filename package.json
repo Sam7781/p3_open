@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch style.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sam7781/p3_open.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sam7781/p3_open/issues"
+  },
+  "homepage": "https://github.com/Sam7781/p3_open#readme",
+  "devDependencies": {
+    "sass": "^1.54.9"
+  }
+}

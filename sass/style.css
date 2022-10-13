@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 1000px) {
+  main {
+    padding: 0px;
+  }
+}
+
+h1, h2, h3, h4, p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  position: relative;
+  font-family: "shrikhand", cursive;
+  font-size: 15px;
+  text-align: center;
+  box-shadow: 0px 3px 3px 0px rgb(207, 207, 207);
+  padding: 1px;
+  margin: 0;
+  height: 70px;
+}
+
+#ville {
+  display: flex;
+  background-color: #ededed;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 10px;
+  font-weight: 100;
+  height: 50px;
+}
+#ville i {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#explorer {
+  background-color: rgb(248, 248, 248);
+  text-align: center;
+  padding-bottom: 60px;
+  /*# sourceMappingURL=style.css.map */
+}
+#explorer h2 {
+  font-weight: bolder;
+  font-size: 24px;
+  padding-top: 40px;
+  padding-bottom: 15px;
+}
+#explorer p {
+  font-weight: 100;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: grey;
+}
+#explorer button {
+  background: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  padding: 17px 25px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 25px;
+  box-shadow: 2px 5px 8px -3px #bdbdbd;
+  transition: transform 0.5s;
+}
+#explorer button:hover {
+  transform: scale(1.03);
+  opacity: 0.85;
+  box-shadow: 10px 10px 16px -3px #000000;
+}
+
+.fonction {
+  counter-reset: etapes;
+  padding: 0 10px;
+}
+.fonction h2 {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+.fonction ol {
+  margin-top: 0px;
+  display: flex;
+  padding: 0px 10px 50px 20px;
+  gap: 30px;
+}
+@media (max-width: 1000px) {
+  .fonction ol {
+    flex-direction: column;
+  }
+}
+.fonction li {
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+  background-color: #f6f6f6;
+  padding: 25px 20px 25px 30px;
+  flex-grow: 1;
+  border-radius: 20px;
+  list-style-type: none;
+  box-shadow: 2px 5px 8px -3px #bdbdbd;
+}
+.fonction li::before {
+  content: counter(etapes);
+  counter-increment: etapes;
+  color: white;
+  background-color: #9356DC;
+  padding: 6px 10px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: -15px;
+}
+.fonction li:hover {
+  transform: scale(1.03);
+}
+.fonction li i.fas {
+  margin-right: 20px;
+  color: grey;
+  font-size: 20px;
+}
+.fonction li i.fas:hover {
+  color: #9356DC;
+}
+
+.menus {
+  background-color: #edecec;
+  padding-bottom: 90px;
+}
+.menus h2 {
+  font-weight: 700;
+  font-size: 30px;
+  padding-top: 55px;
+  padding-bottom: 25px;
+  margin-left: 15px;
+}
+.menus .menus_card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+@media (max-width: 1000px) {
+  .menus .menus_card {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 15px;
+  }
+}
+.menus .menus_card .carte {
+  position: relative;
+  margin-bottom: -30px;
+}
+.menus .menus_card .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 25px;
+  width: 80px;
+  color: #1b6150;
+  background-color: #99E2D0;
+  text-align: center;
+  padding-top: 5px;
+  right: 18px;
+  top: 15px;
+  font-size: 14px;
+}
+.menus .card {
+  padding-bottom: 0;
+}
+.menus .card_img {
+  height: 200px;
+  background-position: center bottom;
+  background-size: cover;
+  border-radius: 15px 15px 0 0;
+}
+.menus .card_img-2 {
+  background-position: center 60%;
+}
+.menus .card_img-1 {
+  background-image: url("../.././images/restaurants/menu_1.jpg");
+}
+.menus .card_img-2 {
+  background-image: url("../.././images/restaurants/menu_2.jpg");
+}
+.menus .card_img-3 {
+  background-image: url("../.././images/restaurants/menu_3.jpg");
+}
+.menus .card_img-4 {
+  background-image: url("../.././images/restaurants/menu_4.jpg");
+}
+.menus .card_info {
+  height: 28%;
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 15px 15px;
+}
+.menus .card_info h3 {
+  padding-top: 15px;
+  padding-bottom: 2px;
+  margin-left: 15px;
+  font-size: 19px;
+  font-weight: 700;
+}
+.menus .card_info p {
+  padding-bottom: 50px;
+  margin-left: 15px;
+  font-size: 18px;
+  font-weight: 100;
+}
+.menus .card_info i {
+  font-size: 25px;
+  position: absolute;
+  right: 30px;
+  top: 25%;
+}
+.menus .card_info:hover .far::before {
+  content: "\f004";
+  font-weight: bold;
+  color: rgb(147, 86, 220);
+  display: block;
+  background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+footer {
+  background-color: #353535;
+  padding: 25px 25px;
+  color: white;
+}
+footer h2 {
+  font-family: "shrikhand", "sans-serif";
+  font-weight: 300;
+  font-size: 20px;
+  padding: 18px 0px;
+}
+footer .footer-ico-link {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+footer a {
+  display: block;
+  padding-top: 5px;
+}
+
+@keyframes iconanim {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+#image-resto img {
+  display: block;
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+  margin-bottom: -20px;
+}
+
+.nom-resto {
+  display: flex;
+  padding: 10px 35px 10px 20px;
+  align-items: center;
+  background: #edecec;
+  border-radius: 45px 45px 0 0;
+  margin-top: -45px;
+  width: 100%;
+  position: relative;
+  font-size: 30px;
+}
+.nom-resto h2 {
+  font-family: "shrikhand", "sans-serif";
+  font-size: 30px;
+  position: relative;
+  width: 100%;
+}
+.nom-resto h2 i {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+}
+.nom-resto:hover .far::before {
+  content: "\f004";
+  font-weight: bold;
+  color: rgb(147, 86, 220);
+  background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.resto_lapalette {
+  padding: 0 15px;
+  background: #edecec;
+}
+
+.menu_la_palette {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.menu_la_palette h3 {
+  margin: 8px;
+}
+@media (max-width: 1000px) {
+  .menu_la_palette {
+    grid-template-columns: 1fr;
+  }
+}
+.menu_la_palette .entrees, .menu_la_palette .plats, .menu_la_palette .desserts {
+  overflow: hidden;
+}
+.menu_la_palette .entrees .entrees_details, .menu_la_palette .plats .entrees_details, .menu_la_palette .desserts .entrees_details {
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 2px 2px 8px 1px #f9f9f9;
+  margin: 5px;
+}
+.menu_la_palette .entrees .entrees_details .prix, .menu_la_palette .plats .entrees_details .prix, .menu_la_palette .desserts .entrees_details .prix {
+  margin-left: auto;
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px;
+}
+.menu_la_palette .entrees .entrees_details .description_entrees, .menu_la_palette .plats .entrees_details .description_entrees, .menu_la_palette .desserts .entrees_details .description_entrees {
+  padding: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu_la_palette .entrees .entrees_details .description_entrees h4, .menu_la_palette .entrees .entrees_details .description_entrees span, .menu_la_palette .plats .entrees_details .description_entrees h4, .menu_la_palette .plats .entrees_details .description_entrees span, .menu_la_palette .desserts .entrees_details .description_entrees h4, .menu_la_palette .desserts .entrees_details .description_entrees span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu_la_palette .entrees .entrees_details .cheked, .menu_la_palette .plats .entrees_details .cheked, .menu_la_palette .desserts .entrees_details .cheked {
+  display: grid;
+  place-items: center;
+  background-color: #99E2D0;
+  border-radius: 0 15px 15px 0;
+  margin-right: -50px;
+  width: 50px;
+  transition: margin-right 0.2s;
+}
+.menu_la_palette .entrees .entrees_details .cheked i, .menu_la_palette .plats .entrees_details .cheked i, .menu_la_palette .desserts .entrees_details .cheked i {
+  display: grid;
+  place-items: center;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  color: #99E2D0;
+}
+.menu_la_palette .entrees .entrees_details:hover .cheked, .menu_la_palette .plats .entrees_details:hover .cheked, .menu_la_palette .desserts .entrees_details:hover .cheked {
+  margin-right: 0;
+}
+.menu_la_palette .entrees .entrees_details:hover i, .menu_la_palette .plats .entrees_details:hover i, .menu_la_palette .desserts .entrees_details:hover i {
+  animation: iconanim 0.5s ease-in-out;
+}
+
+/*# sourceMappingURL=style.css.map */

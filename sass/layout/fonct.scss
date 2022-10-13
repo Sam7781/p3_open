@@ -1,0 +1,58 @@
+@import "../utils/hover.scss";
+@import "../utils/box-shadow";
+@import "../utils/colors.scss";
+
+.fonction{
+    counter-reset:etapes;
+    padding:0 10px;
+    h2{
+        margin-left: 20px;
+        margin-top: 20px;
+        font-weight: 700;
+    }
+    & ol{
+        
+        margin-top: 0px;
+        display: flex;
+        padding: 0px 10px 50px 20px;
+        gap:30px;
+        @media (max-width: 1000px) {
+            flex-direction: column;
+        }
+    }
+    & li{
+        font-size: 17px;
+        font-weight: 600;
+        position: relative;
+        &::before{
+            content: counter(etapes);
+            counter-increment: etapes;
+            color:white;
+            background-color: $primary-color;
+            padding: 6px 10px;
+            border-radius: 50%;
+            display:grid;
+            place-items: center;
+            position: absolute;
+            bottom: 20px;
+            left:-15px;
+        }
+       background-color: #f6f6f6; 
+       padding : 25px 20px 25px 30px;
+       flex-grow: 1;
+       border-radius: 20px;
+       list-style-type: none;
+       @include base-shadow;
+       &:hover{
+        @include hover;
+       }
+       & i.fas{
+        margin-right: 20px;
+        color:grey;
+        font-size: 20px;
+        &:hover{
+            color:$primary-color;
+        }
+       }
+    }
+}

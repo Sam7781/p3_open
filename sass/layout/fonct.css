@@ -1,0 +1,55 @@
+.fonction {
+  counter-reset: etapes;
+  padding: 0 10px;
+}
+.fonction h2 {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+.fonction ol {
+  margin-top: 0px;
+  display: flex;
+  padding: 0px 10px 50px 20px;
+  gap: 30px;
+}
+@media (max-width: 1000px) {
+  .fonction ol {
+    flex-direction: column;
+  }
+}
+.fonction li {
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+  background-color: #f6f6f6;
+  padding: 25px 20px 25px 30px;
+  flex-grow: 1;
+  border-radius: 20px;
+  list-style-type: none;
+  box-shadow: 2px 5px 8px -3px #bdbdbd;
+}
+.fonction li::before {
+  content: counter(etapes);
+  counter-increment: etapes;
+  color: white;
+  background-color: #9356DC;
+  padding: 6px 10px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 20px;
+  left: -15px;
+}
+.fonction li:hover {
+  transform: scale(1.03);
+}
+.fonction li i.fas {
+  margin-right: 20px;
+  color: grey;
+  font-size: 20px;
+}
+.fonction li i.fas:hover {
+  color: #9356DC;
+}/*# sourceMappingURL=fonct.css.map */

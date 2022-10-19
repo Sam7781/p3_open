@@ -1,5 +1,9 @@
 @import "../utils/variables.scss";
 @import "../utils/colors.scss";
+@keyframes fadeIn{
+    0%{opacity:0.5;}
+    100%{opacity:1}
+}
 .menus{
     background-color: $light-grey;
 
@@ -92,20 +96,14 @@
             &:hover .far::before{
                 content: "\f004";
                 font-weight: bold;
-                // transform: scale(1.02);
-                // color:$secondary-color;
-                //  font-size: 30px;
                 color: rgba(147, 86, 220, 1);
                 display: block;
                 background: -webkit-linear-gradient(rgba(147, 86, 220, 1),rgba(255, 121, 218, 1));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                
+                animation:fadeIn 1s;
             }
-            // .far:hover{
-            //     transition:transform 1s;
-            //     // transform: scale(0.01);
-            // }
+           
         }
         }
   

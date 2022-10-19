@@ -1,3 +1,4 @@
+@import "../utils/box-shadow.css";
 @-webkit-keyframes iconanim {
   0% {
     transform: rotate(-270deg);
@@ -14,6 +15,58 @@
     transform: rotate(0);
   }
 }
+@-webkit-keyframes apparence {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes apparence {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes iconanim {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+header {
+  display: inline;
+}
+header i {
+  transform: translateY(90%);
+  position: absolute;
+  height: 30px;
+  width: 50px;
+  font-size: 25px;
+  margin-left: 20px;
+}
+
 #image-resto img {
   display: block;
   width: 100%;
@@ -48,15 +101,39 @@
 .nom-resto:hover .far::before {
   content: "\f004";
   font-weight: bold;
-  color: rgb(147, 86, 220);
   background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+  cursor: pointer;
 }
 
 .resto_lapalette {
   padding: 0 15px;
   background: #edecec;
+}
+.resto_lapalette .commander {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+.resto_lapalette .commander button {
+  width: 50%;
+  background: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  padding: 17px 25px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: transform 0.5s;
+}
+.resto_lapalette .commander button:hover {
+  transform: scale(1.03);
+  opacity: 0.85;
+  box-shadow: 10px 10px 16px -3px #000000;
+  cursor: pointer;
 }
 
 .menu_la_palette {
@@ -82,6 +159,9 @@
   background-color: white;
   box-shadow: 2px 2px 8px 1px #f9f9f9;
   margin: 5px;
+  margin-bottom: 25px;
+  -webkit-animation: apparence 1s;
+          animation: apparence 1s;
 }
 .menu_la_palette .entrees .entrees_details .prix, .menu_la_palette .plats .entrees_details .prix, .menu_la_palette .desserts .entrees_details .prix {
   margin-left: auto;
@@ -106,18 +186,21 @@
   place-items: center;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
-  margin-right: -50px;
-  width: 50px;
+  margin-right: -60px;
+  width: 60px;
   transition: margin-right 0.2s;
 }
 .menu_la_palette .entrees .entrees_details .cheked i, .menu_la_palette .plats .entrees_details .cheked i, .menu_la_palette .desserts .entrees_details .cheked i {
   display: grid;
   place-items: center;
   background-color: white;
-  width: 25px;
-  height: 25px;
-  border-radius: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
   color: #99E2D0;
+}
+.menu_la_palette .entrees .entrees_details:hover, .menu_la_palette .plats .entrees_details:hover, .menu_la_palette .desserts .entrees_details:hover {
+  cursor: pointer;
 }
 .menu_la_palette .entrees .entrees_details:hover .cheked, .menu_la_palette .plats .entrees_details:hover .cheked, .menu_la_palette .desserts .entrees_details:hover .cheked {
   margin-right: 0;

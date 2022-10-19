@@ -1,3 +1,19 @@
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .menus {
   background-color: #edecec;
   padding-bottom: 90px;
@@ -94,4 +110,6 @@
   background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
 }/*# sourceMappingURL=menus.css.map */

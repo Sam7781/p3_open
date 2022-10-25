@@ -37,24 +37,22 @@
   position: fixed;
   display: grid;
   place-items: center;
-  background-color: #ffffff;
+  background-color: #f7f3f3;
   height: 100vh;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 1;
-  opacity: 0.8;
-  -webkit-animation: loader 1s 2s;
-          animation: loader 1s 2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  transform-origin: bottom;
+  opacity: 0.9;
+  -webkit-animation: loader 1s 3s forwards;
+          animation: loader 1s 3s forwards;
+  transform-origin: top;
 }
 .page_loader i {
-  color: red;
-  -webkit-animation: spin 5s;
-          animation: spin 5s;
+  color: #9356DC;
+  -webkit-animation: spin 3s infinite linear;
+          animation: spin 3s infinite linear;
 }
 
 @-webkit-keyframes loader {

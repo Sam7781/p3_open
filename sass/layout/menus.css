@@ -27,18 +27,28 @@
 }
 .menus .menus_card {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
-@media (max-width: 1000px) {
+@media (min-width: 320px) {
   .menus .menus_card {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .menus .menus_card {
+    grid-template-columns: repeat(2, 2fr);
+    padding: 0 15px;
+  }
+}
+@media (min-width: 1200px) {
+  .menus .menus_card {
+    grid-template-columns: repeat(4, 1fr);
     padding: 0 15px;
   }
 }
 .menus .menus_card .carte {
   position: relative;
-  margin-bottom: -30px;
+  margin-bottom: 20px;
 }
 .menus .menus_card .new::before {
   content: "Nouveau";
@@ -90,7 +100,7 @@
   font-size: 19px;
   font-weight: 700;
 }
-.menus .card_info p {
+.menus .card_info span {
   padding-bottom: 50px;
   margin-left: 15px;
   font-size: 18px;
@@ -102,7 +112,7 @@
   right: 30px;
   top: 25%;
 }
-.menus .card_info:hover .far::before {
+.menus .card_info i:hover {
   content: "\f004";
   font-weight: bold;
   color: rgb(147, 86, 220);

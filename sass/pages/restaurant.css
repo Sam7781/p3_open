@@ -55,6 +55,38 @@
     opacity: 1;
   }
 }
+@keyframes iconanim {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes apparence {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes iconanim {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 header {
   display: inline;
 }
@@ -85,7 +117,6 @@ header i {
   margin-top: -45px;
   width: 100%;
   position: relative;
-  font-size: 30px;
 }
 .nom-resto h2 {
   font-family: "shrikhand", "sans-serif";
@@ -93,12 +124,13 @@ header i {
   position: relative;
   width: 100%;
 }
-.nom-resto h2 i {
+.nom-resto i {
   position: absolute;
   right: 30px;
   top: 50%;
+  font-size: 30px;
 }
-.nom-resto:hover .far::before {
+.nom-resto i:hover {
   content: "\f004";
   font-weight: bold;
   background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
@@ -129,6 +161,11 @@ header i {
   border-radius: 25px;
   transition: transform 0.5s;
 }
+@media (min-width: 768px) {
+  .resto_lapalette .commander button {
+    width: 20%;
+  }
+}
 .resto_lapalette .commander button:hover {
   transform: scale(1.03);
   opacity: 0.85;
@@ -143,16 +180,24 @@ header i {
 }
 .menu_la_palette h3 {
   margin: 8px;
+  text-transform: uppercase;
+  position: relative;
+}
+.menu_la_palette h3::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 4px;
+  width: 50px;
+  background-color: #99E2D0;
 }
 @media (max-width: 1000px) {
   .menu_la_palette {
     grid-template-columns: 1fr;
   }
 }
-.menu_la_palette .entrees, .menu_la_palette .plats, .menu_la_palette .desserts {
-  overflow: hidden;
-}
-.menu_la_palette .entrees .entrees_details, .menu_la_palette .plats .entrees_details, .menu_la_palette .desserts .entrees_details {
+.menu_la_palette .entrees_details {
   display: flex;
   border-radius: 15px;
   overflow: hidden;
@@ -162,26 +207,44 @@ header i {
   margin-bottom: 25px;
   -webkit-animation: apparence 1s;
           animation: apparence 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
-.menu_la_palette .entrees .entrees_details .prix, .menu_la_palette .plats .entrees_details .prix, .menu_la_palette .desserts .entrees_details .prix {
+.menu_la_palette .entrees_details:nth-child(1) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+.menu_la_palette .entrees_details:nth-child(2) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+.menu_la_palette .entrees_details:nth-child(3) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+.menu_la_palette .entrees_details:nth-child(4) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+.menu_la_palette .entrees_details .prix {
   margin-left: auto;
   font-weight: 700;
   display: flex;
   align-items: flex-end;
   padding: 15px;
 }
-.menu_la_palette .entrees .entrees_details .description_entrees, .menu_la_palette .plats .entrees_details .description_entrees, .menu_la_palette .desserts .entrees_details .description_entrees {
+.menu_la_palette .entrees_details .description_entrees {
   padding: 15px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menu_la_palette .entrees .entrees_details .description_entrees h4, .menu_la_palette .entrees .entrees_details .description_entrees span, .menu_la_palette .plats .entrees_details .description_entrees h4, .menu_la_palette .plats .entrees_details .description_entrees span, .menu_la_palette .desserts .entrees_details .description_entrees h4, .menu_la_palette .desserts .entrees_details .description_entrees span {
+.menu_la_palette .entrees_details .description_entrees h4, .menu_la_palette .entrees_details .description_entrees span {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menu_la_palette .entrees .entrees_details .cheked, .menu_la_palette .plats .entrees_details .cheked, .menu_la_palette .desserts .entrees_details .cheked {
+.menu_la_palette .entrees_details .cheked {
   display: grid;
   place-items: center;
   background-color: #99E2D0;
@@ -190,7 +253,7 @@ header i {
   width: 60px;
   transition: margin-right 0.2s;
 }
-.menu_la_palette .entrees .entrees_details .cheked i, .menu_la_palette .plats .entrees_details .cheked i, .menu_la_palette .desserts .entrees_details .cheked i {
+.menu_la_palette .entrees_details .cheked i {
   display: grid;
   place-items: center;
   background-color: white;
@@ -199,13 +262,13 @@ header i {
   border-radius: 20px;
   color: #99E2D0;
 }
-.menu_la_palette .entrees .entrees_details:hover, .menu_la_palette .plats .entrees_details:hover, .menu_la_palette .desserts .entrees_details:hover {
+.menu_la_palette .entrees_details:hover {
   cursor: pointer;
 }
-.menu_la_palette .entrees .entrees_details:hover .cheked, .menu_la_palette .plats .entrees_details:hover .cheked, .menu_la_palette .desserts .entrees_details:hover .cheked {
+.menu_la_palette .entrees_details:hover .cheked {
   margin-right: 0;
 }
-.menu_la_palette .entrees .entrees_details:hover i, .menu_la_palette .plats .entrees_details:hover i, .menu_la_palette .desserts .entrees_details:hover i {
+.menu_la_palette .entrees_details:hover i {
   -webkit-animation: iconanim 0.5s ease-in-out;
           animation: iconanim 0.5s ease-in-out;
 }/*# sourceMappingURL=restaurant.css.map */

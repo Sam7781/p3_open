@@ -14,6 +14,24 @@
     0%{opacity:0.5;}
     100%{opacity:1}
 }
+
+ 
+@import "../utils/variables.scss";
+@import "../utils/colors.scss";
+@import "../utils/box-shadow.scss";
+@import "../utils/animations.scss";
+@keyframes iconanim{
+    0%{
+      transform: rotate(-270deg);  
+    }
+    100%{
+      transform: rotate(0);
+    }
+}
+@keyframes fadeIn{
+    0%{opacity:0.5;}
+    100%{opacity:1}
+}
 header{
     display: inline;
   
@@ -51,18 +69,14 @@ header{
         font-family: "shrikhand",'sans-serif';
         font-size: 30px;
         position: relative; 
-        width:100%;
+        width:100%;}
         i {
             
             position: absolute;
             right:30px;
             top:50%;
-            
-         }
-        }
-        font-size: 30px;
-        
-            &:hover .far::before{
+            font-size:30px;
+            &:hover{
                 content: "\f004";
                 font-weight: bold;
                 background: -webkit-linear-gradient(rgba(147, 86, 220, 1),rgba(255, 121, 218, 1));
@@ -70,9 +84,15 @@ header{
                -webkit-text-fill-color: transparent;          
                animation:fadeIn 1s;
                 cursor: pointer;
-            } 
+            }  
+         
+        }
+      }
+   
+        
+           
     
-    }
+    
   .resto_lapalette{
     padding:0 15px;
     background:$light-grey;
@@ -81,18 +101,18 @@ header{
         padding-top:40px;
         padding-bottom: 50px;
     button{
-        width: 50%;
-        
-        background: linear-gradient(to top,rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+          width: 50%;
+          background: linear-gradient(to top,rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
           padding: 17px 25px;
           color: white;
           border: none;
           font-size: 16px;
           font-weight: 500;
           border-radius: 25px;
-          // box-shadow: 2px 1px 8px -3px #000000;
-        //  @include base-shadow;
           transition: transform 0.5s;
+          @media(min-width:768px){
+            width:20%;
+          }
         }
         & button:hover {
             transform: scale(1.03);
@@ -112,15 +132,25 @@ header{
     gap:15px;
     h3{
         margin:8px;
+        text-transform: uppercase;
+        position: relative;
+        &::after{
+          content:"";
+          position: absolute;
+          top:20px;
+          left:0;
+          height: 4px;
+          width: 50px;
+          background-color: $tertiary-color;
+        }
     }
      @media (max-width: 1000px){
         grid-template-columns: 1fr;
     }    
-        .entrees,.plats ,.desserts{
-
-             overflow: hidden;
+       
              
             .entrees_details{
+              
                display: flex;
                border-radius: 15px; 
                 overflow: hidden;
@@ -129,6 +159,12 @@ header{
                 margin: 5px;
                 margin-bottom:25px;
                 animation: apparence 1s;
+                animation-fill-mode: both;
+                @for $i from 1 through 4{
+                &:nth-child(#{$i}){
+                  animation-delay:100ms * $i;
+                }
+              }
                 .prix{
                     margin-left: auto;
                     font-weight: 700;
@@ -183,7 +219,5 @@ header{
         }
        
 
- 
-}
  
 

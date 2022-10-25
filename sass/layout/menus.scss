@@ -205,7 +205,7 @@
         }       
         @for $i from 1 through 4{
             &_img-#{$i}{
-                background-image:url(".././images/restaurants/menu_#{$i}.jpg") ;
+                background-image:url("../images/restaurants/menu_#{$i}.jpg") ;
             }
         }
         &_info{

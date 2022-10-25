@@ -76,16 +76,16 @@
   background-position: center 60%;
 }
 .menus .card_img-1 {
-  background-image: url("../.././images/restaurants/menu_1.jpg");
+  background-image: url(".././images/restaurants/menu_1.jpg");
 }
 .menus .card_img-2 {
-  background-image: url("../.././images/restaurants/menu_2.jpg");
+  background-image: url(".././images/restaurants/menu_2.jpg");
 }
 .menus .card_img-3 {
-  background-image: url("../.././images/restaurants/menu_3.jpg");
+  background-image: url(".././images/restaurants/menu_3.jpg");
 }
 .menus .card_img-4 {
-  background-image: url("../.././images/restaurants/menu_4.jpg");
+  background-image: url(".././images/restaurants/menu_4.jpg");
 }
 .menus .card_info {
   height: 28%;

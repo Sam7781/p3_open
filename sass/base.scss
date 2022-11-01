@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import "./utils/colors.scss";
+@import "./utils/variables.scss";
 
 * {
    box-sizing: border-box;
@@ -11,7 +11,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 main{
-  // padding: 0 70px;
+  
   @media(max-width:1000px){
     padding: 0px;
    
@@ -22,9 +22,6 @@ h1,h2,h3,h4,p{
   padding: 0;
   margin: 0;
 }
-// h3,p{
-//   margin: 0;
-// }
 a{
   text-decoration: none;
   color:inherit;

@@ -4,7 +4,8 @@
 }
 .fonction h2 {
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 30px;
   font-weight: 700;
 }
 .fonction ol {
@@ -45,11 +46,11 @@
 .fonction li:hover {
   transform: scale(1.03);
 }
+.fonction li:hover .fas {
+  color: #9356DC;
+}
 .fonction li i.fas {
   margin-right: 20px;
   color: grey;
   font-size: 20px;
-}
-.fonction li i.fas:hover {
-  color: #9356DC;
 }/*# sourceMappingURL=fonct.css.map */

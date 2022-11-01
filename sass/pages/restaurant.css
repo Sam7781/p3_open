@@ -31,14 +31,6 @@
     transform: scale(1);
   }
 }
-@keyframes iconanim {
-  0% {
-    transform: rotate(-270deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0.5;
@@ -55,48 +47,58 @@
     opacity: 1;
   }
 }
-@keyframes iconanim {
-  0% {
-    transform: rotate(-270deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
-@keyframes apparence {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes iconanim {
-  0% {
-    transform: rotate(-270deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0.5;
-  }
+@-webkit-keyframes anim {
   100% {
     opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes anim {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes loader {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 header {
   display: inline;
 }
 header i {
-  transform: translateY(90%);
   position: absolute;
-  height: 30px;
-  width: 50px;
-  font-size: 25px;
+  font-size: 20px;
   margin-left: 20px;
+  margin-top: 25px;
 }
 
 #image-resto img {
@@ -178,6 +180,34 @@ header i {
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
+.menu_la_palette .entrees {
+  -webkit-animation: apparence 1s;
+          animation: apparence 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  animation: apparence 1s;
+  animation-fill-mode: both;
+  animation: apparence 1s;
+  animation-fill-mode: both;
+  animation: apparence 1s;
+  animation-fill-mode: both;
+}
+.menu_la_palette .entrees:nth-child(1) {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+.menu_la_palette .entrees:nth-child(2) {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+.menu_la_palette .entrees:nth-child(3) {
+  -webkit-animation-delay: 3000ms;
+          animation-delay: 3000ms;
+}
+.menu_la_palette .entrees:nth-child(4) {
+  -webkit-animation-delay: 4000ms;
+          animation-delay: 4000ms;
+}
 .menu_la_palette h3 {
   margin: 8px;
   text-transform: uppercase;
@@ -205,26 +235,6 @@ header i {
   box-shadow: 2px 2px 8px 1px #f9f9f9;
   margin: 5px;
   margin-bottom: 25px;
-  -webkit-animation: apparence 1s;
-          animation: apparence 1s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-}
-.menu_la_palette .entrees_details:nth-child(1) {
-  -webkit-animation-delay: 100ms;
-          animation-delay: 100ms;
-}
-.menu_la_palette .entrees_details:nth-child(2) {
-  -webkit-animation-delay: 200ms;
-          animation-delay: 200ms;
-}
-.menu_la_palette .entrees_details:nth-child(3) {
-  -webkit-animation-delay: 300ms;
-          animation-delay: 300ms;
-}
-.menu_la_palette .entrees_details:nth-child(4) {
-  -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
 }
 .menu_la_palette .entrees_details .prix {
   margin-left: auto;

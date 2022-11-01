@@ -3,10 +3,21 @@ header {
   font-family: "shrikhand", cursive;
   font-size: 15px;
   text-align: center;
-  box-shadow: 0px 3px 3px 0px rgb(207, 207, 207);
+  box-shadow: 0px 3px 3px 0px rgb(236, 236, 236);
   padding: 1px;
   margin: 0;
   height: 70px;
+}
+header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+@media (min-width: 768px) {
+  header img {
+    width: 20%;
+  }
 }
 header #explorer {
   background-color: rgb(248, 248, 248);
@@ -39,15 +50,4 @@ header #explorer button:hover {
   transform: scale(1.03);
   opacity: 0.85;
   box-shadow: 10px 10px 16px -3px #000000;
-}
-header img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 45%;
-}
-@media (min-width: 768px) {
-  header img {
-    width: 20%;
-  }
 }/*# sourceMappingURL=header.css.map */

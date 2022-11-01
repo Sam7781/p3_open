@@ -1,12 +1,14 @@
 @import "../utils/hover.scss"; @import "../utils/box-shadow";
-@import "../utils/colors.scss";
+@import "../utils/variables.scss";
 
 .fonction{
     counter-reset:etapes;
     padding:0 10px;
+    
     h2{
         margin-left: 20px;
-        margin-top: 20px;
+        margin-top: 40px;
+        margin-bottom: 30px;
         font-weight: 700;
     }
     & ol{
@@ -23,6 +25,7 @@
         font-size: 17px;
         font-weight: 600;
         position: relative;
+        
         &::before{
             content: counter(etapes);
             counter-increment: etapes;
@@ -35,6 +38,7 @@
             position: absolute;
             bottom: 20px;
             left:-15px;
+           
         }
        background-color: #f6f6f6; 
        padding : 25px 20px 25px 30px;
@@ -44,14 +48,15 @@
        @include base-shadow;
        &:hover{
         @include hover;
+       .fas{
+        color:$primary-color;
+        }      
        }
        & i.fas{
         margin-right: 20px;
         color:grey;
         font-size: 20px;
-        &:hover{
-            color:$primary-color;
-        }
+       
        }
     }
 }

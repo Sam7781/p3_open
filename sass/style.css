@@ -31,10 +31,21 @@ header {
   font-family: "shrikhand", cursive;
   font-size: 15px;
   text-align: center;
-  box-shadow: 0px 3px 3px 0px rgb(207, 207, 207);
+  box-shadow: 0px 3px 3px 0px rgb(236, 236, 236);
   padding: 1px;
   margin: 0;
   height: 70px;
+}
+header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+@media (min-width: 768px) {
+  header img {
+    width: 20%;
+  }
 }
 header #explorer {
   background-color: rgb(248, 248, 248);
@@ -68,17 +79,6 @@ header #explorer button:hover {
   opacity: 0.85;
   box-shadow: 10px 10px 16px -3px #000000;
 }
-header img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 45%;
-}
-@media (min-width: 768px) {
-  header img {
-    width: 20%;
-  }
-}
 
 #ville {
   display: flex;
@@ -89,17 +89,110 @@ header img {
   font-size: 10px;
   font-weight: 100;
   height: 50px;
+  box-shadow: -3px -1px 9px 6px rgba(174, 172, 172, 0.52);
 }
 #ville i {
   font-size: 18px;
   margin-bottom: 5px;
 }
 
+@-webkit-keyframes iconanim {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes iconanim {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@-webkit-keyframes apparence {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes apparence {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes anim {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes anim {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes loader {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 #explorer {
   background-color: rgb(248, 248, 248);
   text-align: center;
   padding-bottom: 60px;
-  /*# sourceMappingURL=style.css.map */
 }
 #explorer h2 {
   font-weight: bolder;
@@ -134,7 +227,7 @@ header img {
   position: fixed;
   display: grid;
   place-items: center;
-  background-color: #f7f3f3;
+  background-color: #fbfbfb;
   height: 100vh;
   top: 0;
   left: 0;
@@ -142,37 +235,24 @@ header img {
   right: 0;
   z-index: 1;
   opacity: 0.9;
-  animation: loader 1s 3s forwards;
+  -webkit-animation: loader 1s 3s forwards;
+          animation: loader 1s 3s forwards;
   transform-origin: top;
 }
 .page_loader i {
   color: #9356DC;
-  animation: spin 3s infinite linear;
+  -webkit-animation: spin 3s infinite linear;
+          animation: spin 3s infinite linear;
 }
 
-@keyframes loader {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .fonction {
   counter-reset: etapes;
   padding: 0 10px;
 }
 .fonction h2 {
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 30px;
   font-weight: 700;
 }
 .fonction ol {
@@ -213,13 +293,13 @@ header img {
 .fonction li:hover {
   transform: scale(1.03);
 }
+.fonction li:hover .fas {
+  color: #9356DC;
+}
 .fonction li i.fas {
   margin-right: 20px;
   color: grey;
   font-size: 20px;
-}
-.fonction li i.fas:hover {
-  color: #9356DC;
 }
 
 @keyframes fadeIn {
@@ -292,16 +372,16 @@ header img {
   background-position: center 60%;
 }
 .menus .card_img-1 {
-  background-image: url(".././images/restaurants/menu_1.jpg");
+  background-image: url("../images/restaurants/menu_1.jpg");
 }
 .menus .card_img-2 {
-  background-image: url(".././images/restaurants/menu_2.jpg");
+  background-image: url("../images/restaurants/menu_2.jpg");
 }
 .menus .card_img-3 {
-  background-image: url(".././images/restaurants/menu_3.jpg");
+  background-image: url("../images/restaurants/menu_3.jpg");
 }
 .menus .card_img-4 {
-  background-image: url(".././images/restaurants/menu_4.jpg");
+  background-image: url("../images/restaurants/menu_4.jpg");
 }
 .menus .card_info {
   height: 28%;
@@ -336,7 +416,8 @@ header img {
   background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
 }
 
 footer {
@@ -376,14 +457,6 @@ footer a {
     transform: scale(1);
   }
 }
-@keyframes iconanim {
-  0% {
-    transform: rotate(-270deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
-}
 @keyframes fadeIn {
   0% {
     opacity: 0.5;
@@ -392,55 +465,44 @@ footer a {
     opacity: 1;
   }
 }
-@keyframes iconanim {
-  0% {
-    transform: rotate(-270deg);
-  }
+@keyframes anim {
   100% {
-    transform: rotate(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
-@keyframes apparence {
+@keyframes loader {
   0% {
-    transform: scale(0);
-  }
-  100% {
     transform: scale(1);
   }
-}
-@keyframes iconanim {
-  0% {
-    transform: rotate(-270deg);
-  }
   100% {
-    transform: rotate(0);
+    transform: scale(0);
   }
 }
-@keyframes fadeIn {
+@keyframes spin {
   0% {
-    opacity: 0.5;
+    transform: rotate(0deg);
   }
   100% {
-    opacity: 1;
+    transform: rotate(360deg);
   }
 }
 header {
   display: inline;
 }
 header i {
-  transform: translateY(90%);
   position: absolute;
-  height: 30px;
-  width: 50px;
-  font-size: 25px;
+  font-size: 20px;
   margin-left: 20px;
+  margin-top: 25px;
 }
 
 #image-resto img {
   display: block;
   width: 100%;
   height: 40vh;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-bottom: -20px;
 }
 
@@ -472,7 +534,8 @@ header i {
   background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
   cursor: pointer;
 }
 
@@ -513,6 +576,34 @@ header i {
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
 }
+.menu_la_palette .entrees {
+  -webkit-animation: apparence 1s;
+          animation: apparence 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  animation: apparence 1s;
+  animation-fill-mode: both;
+  animation: apparence 1s;
+  animation-fill-mode: both;
+  animation: apparence 1s;
+  animation-fill-mode: both;
+}
+.menu_la_palette .entrees:nth-child(1) {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+.menu_la_palette .entrees:nth-child(2) {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+.menu_la_palette .entrees:nth-child(3) {
+  -webkit-animation-delay: 3000ms;
+          animation-delay: 3000ms;
+}
+.menu_la_palette .entrees:nth-child(4) {
+  -webkit-animation-delay: 4000ms;
+          animation-delay: 4000ms;
+}
 .menu_la_palette h3 {
   margin: 8px;
   text-transform: uppercase;
@@ -540,20 +631,6 @@ header i {
   box-shadow: 2px 2px 8px 1px #f9f9f9;
   margin: 5px;
   margin-bottom: 25px;
-  animation: apparence 1s;
-  animation-fill-mode: both;
-}
-.menu_la_palette .entrees_details:nth-child(1) {
-  animation-delay: 100ms;
-}
-.menu_la_palette .entrees_details:nth-child(2) {
-  animation-delay: 200ms;
-}
-.menu_la_palette .entrees_details:nth-child(3) {
-  animation-delay: 300ms;
-}
-.menu_la_palette .entrees_details:nth-child(4) {
-  animation-delay: 400ms;
 }
 .menu_la_palette .entrees_details .prix {
   margin-left: auto;
@@ -598,7 +675,53 @@ header i {
   margin-right: 0;
 }
 .menu_la_palette .entrees_details:hover i {
-  animation: iconanim 0.5s ease-in-out;
+  -webkit-animation: iconanim 0.5s ease-in-out;
+          animation: iconanim 0.5s ease-in-out;
 }
 
-/*# sourceMappingURL=style.css.map */
+@keyframes iconanim {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes apparence {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes anim {
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes loader {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */

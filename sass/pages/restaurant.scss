@@ -1,53 +1,17 @@
 @import "../utils/variables.scss";
-@import "../utils/colors.scss";
 @import "../utils/box-shadow.css";
 @import "../utils/animations.scss";
-@keyframes iconanim{
-    0%{
-      transform: rotate(-270deg);  
-    }
-    100%{
-      transform: rotate(0);
-    }
-}
-@keyframes fadeIn{
-    0%{opacity:0.5;}
-    100%{opacity:1}
-}
 
- 
-@import "../utils/variables.scss";
-@import "../utils/colors.scss";
-@import "../utils/box-shadow.scss";
-@import "../utils/animations.scss";
-@keyframes iconanim{
-    0%{
-      transform: rotate(-270deg);  
-    }
-    100%{
-      transform: rotate(0);
-    }
-}
-@keyframes fadeIn{
-    0%{opacity:0.5;}
-    100%{opacity:1}
-}
 header{
     display: inline;
-  
     i{
-    transform: translateY(90%);
     position:absolute;
-    height:30px;
-    width:50px;
-    font-size:25px;
+    font-size:20px;
     margin-left: 20px;
-   
+    margin-top: 25px;
     }
-   
-}
+   }
 #image-resto img{
-    
     display: block;
     width:100%;
     height: 40vh;
@@ -88,12 +52,7 @@ header{
          
         }
       }
-   
-        
-           
-    
-    
-  .resto_lapalette{
+.resto_lapalette{
     padding:0 15px;
     background:$light-grey;
     .commander{
@@ -126,10 +85,17 @@ header{
   }
 
 .menu_la_palette{ 
-    
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap:15px;
+    .entrees{
+    @for $i from 1 through 4{
+      &:nth-child(#{$i}){
+        animation-delay:1000ms * ($i);
+      }
+      animation: apparence 1s;
+      animation-fill-mode: both;
+    }}
     h3{
         margin:8px;
         text-transform: uppercase;
@@ -147,44 +113,34 @@ header{
      @media (max-width: 1000px){
         grid-template-columns: 1fr;
     }    
-       
-             
-            .entrees_details{
-              
-               display: flex;
-               border-radius: 15px; 
-                overflow: hidden;
-               background-color: white;
-                box-shadow: 2px 2px 8px 1px #f9f9f9;
-                margin: 5px;
-                margin-bottom:25px;
-                animation: apparence 1s;
-                animation-fill-mode: both;
-                @for $i from 1 through 4{
-                &:nth-child(#{$i}){
-                  animation-delay:100ms * $i;
-                }
-              }
-                .prix{
+    .entrees_details{
+       display: flex;
+       border-radius: 15px; 
+       overflow: hidden;
+       background-color: white;
+       box-shadow: 2px 2px 8px 1px #f9f9f9;
+       margin: 5px;
+       margin-bottom:25px;                  
+                
+         .prix{
                     margin-left: auto;
                     font-weight: 700;
                     display: flex;
                     align-items: flex-end;
                     padding: 15px;
                 }
-                .description_entrees{
+          .description_entrees{
                     padding: 15px;
                     overflow: hidden;
                     white-space: nowrap;
-                    text-overflow: ellipsis;
-                    
+                    text-overflow: ellipsis;       
                     h4, span{
                         overflow: hidden;
                         white-space: nowrap;
                         text-overflow: ellipsis;
                     }
                 }
-                .cheked{
+          .cheked{
                     display: grid;
                     place-items: center;
                     background-color: $tertiary-color;
@@ -208,10 +164,8 @@ header{
                     cursor: pointer;
                  .cheked{
                     margin-right: 0;
-                    
                     }
                   i{
-                    
                     animation: iconanim 0.5s ease-in-out;
                     }
                }
